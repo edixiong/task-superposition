@@ -1,0 +1,75 @@
+num_exper: 100
+num_examples: 80
+num_tasks: 4
+calculate_topk: False
+max_tokens: 0
+num_beams: 0
+task_funcs_dict:
+  0:
+    name: AplusB_t
+    kwargs:
+      low: 10
+      high: 99
+      language: "or"
+      symbol: "+"
+      symbol2: "->"
+  1:
+    name: AplusB_t
+    kwargs:
+      low: 10
+      high: 99
+      language: "en"
+      symbol: "+"
+      symbol2: "->"
+  2:
+    name: AplusB_t
+    kwargs:
+      low: 10
+      high: 99
+      language: "fr"
+      symbol: "+"
+      symbol2: "->"
+  3:
+    name: AplusB_t
+    kwargs:
+      low: 10
+      high: 99
+      language: "es"
+      symbol: "+"
+      symbol2: "->"
+question:
+  name: add_translate
+  kwargs:
+    low: 10
+    high: 99
+    lang_list: !!python/list ["or", "en", "fr", "es"]
+    symbol: "+"
+    symbol2: "->"
+distribution: !!python/list [1/4, 1/4, 1/4, 1/4]
+order: random
+prompt_template_name: standard
+device: cuda:0
+seed: 0
+model_aliases: !!python/list ["gpt-3.5-turbo-instruct", "Meta-Llama-3-70B", "Qwen1.5-72B"]
+pretrained_dir: True
+dir_name: add_traslate
+model_kwargs:
+  Qwen1.5-0.5B:
+    name: Qwen1.5-0.5B
+  Qwen1.5-1.8B:
+    name: Qwen1.5-1.8B
+  Qwen1.5-4B:
+    name: Qwen1.5-4B
+  Qwen1.5-7B:
+    name: Qwen1.5-7B
+  Qwen1.5-14B:
+    name: Qwen1.5-14B
+  Qwen1.5-72B:
+    name: Qwen1.5-72B
+  Meta-Llama-3-8B:
+    name: Meta-Llama-3-8B
+  Meta-Llama-3-70B:
+    name: Meta-Llama-3-70B
+  gpt-3.5-turbo-instruct:
+    name: gpt-3.5-turbo-instruct
+    api: openai

@@ -1,0 +1,55 @@
+num_exper: 100
+num_examples: 60
+num_tasks: 3
+calculate_topk: False
+max_tokens: 0
+num_beams: 0
+task_funcs_dict:
+  0:
+    name: copyA
+    kwargs:
+      low: 10
+      high: 99
+  1:
+    name: copyB
+    kwargs:
+      low: 10
+      high: 99
+  2:
+    name: AplusB
+    kwargs:
+      low: 10
+      high: 99
+question:
+  name: AB1
+  kwargs:
+    low: 10
+    high: 99
+distribution: !!python/list [1/3, 1/3, 1/3]
+order: random
+prompt_template_name: standard
+device: cuda:0
+seed: 0
+model_aliases: !!python/list ["gpt-3.5-turbo-instruct", "Meta-Llama-3-70B", "Qwen1.5-72B"]
+pretrained_dir: True
+dir_name: AB
+model_kwargs:
+  Qwen1.5-0.5B:
+    name: Qwen1.5-0.5B
+  Qwen1.5-1.8B:
+    name: Qwen1.5-1.8B
+  Qwen1.5-4B:
+    name: Qwen1.5-4B
+  Qwen1.5-7B:
+    name: Qwen1.5-7B
+  Qwen1.5-14B:
+    name: Qwen1.5-14B
+  Qwen1.5-72B:
+    name: Qwen1.5-72B
+  Meta-Llama-3-8B:
+    name: Meta-Llama-3-8B
+  Meta-Llama-3-70B:
+    name: Meta-Llama-3-70B
+  gpt-3.5-turbo-instruct:
+    name: gpt-3.5-turbo-instruct
+    api: openai
