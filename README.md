@@ -24,9 +24,11 @@ python run_experiments.py --raw_config=config/word.yaml ## check the note below
 ```
 
 **Important**
+
 If you run inference on gpt-3.5-turbo-instruct, which is the default in all config files under folder `config`, there will be a charge on using this model. The current implementation to get probabilities of gpt-3.5-turbo-instruct uses the beam search. Check `get_probs_openai()` in `run_experiments.py` for more detail. If you do not want to run inference on gpt-3.5-turbo-instruct, you can change the config files in `config` folder.
 
 **Note on experiment of Figure 2(d)**
+
 To run the experiment
 ```
 python run_experiments.py --raw_config=config/word.yaml
